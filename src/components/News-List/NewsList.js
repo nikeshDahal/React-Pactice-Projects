@@ -14,6 +14,10 @@ const NewsList = (props) => {
           content={newsItem.content}
           description={newsItem.description}
           image = {newsItem.image}
+          url = {newsItem.url}
+          source = {newsItem.source.name}
+          author = {newsItem.author}
+          // moreDescriptions = {newsItem.newsUrl}
         />
       ))}
     </ul>

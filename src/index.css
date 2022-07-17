@@ -3,11 +3,14 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  
 }
 
 body {
-  margin: 4rem;
-  background-color: #fdfbfb;
+  /* margin: 4rem; */
+  /* margin-left: 3rem;
+  margin-right: 3rem; */
+  background-color: white;
   margin-top: 0rem;
 }
