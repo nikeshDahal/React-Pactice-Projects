@@ -71,7 +71,7 @@
   .navbar a:hover,
   .navbar a:active,
   .navbar a.active {
-    color: #95bcf0;
+    color: #fceb08;
     padding-bottom: 0.25rem;
-    border-bottom: 4px solid #95bcf0;
+    border-bottom: 4px solid #fceb08;
   }

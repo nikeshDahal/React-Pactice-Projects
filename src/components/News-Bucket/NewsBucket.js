@@ -1,21 +1,23 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect  } from "react";
 import NewsList from "../News-List/NewsList";
 import axios from "axios";
 import classes from "./NewsBucket.module.css";
+import { useParams } from "react-router-dom";
 
 const NewsBucket = (props) => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const params = useParams(null);
+  console.log('categoryid',params.categoryId);
 
   const buttonHandler = useCallback(async (event) => {
     setLoading(true);
     setError(null);
-    // event.preventDefault();
     console.log("clicked");
     try {
       const responseDataFromApi = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=4443f3e9463e40a5b23bc7bb87b07f9a`
+        `https://newsapi.org/v2/top-headlines?country=in&category=${params.categoryId ? params.categoryId:'general'}&apiKey=${process.env.REACT_APP_NEWS_API}`
       );
       const filteredNews = responseDataFromApi.data.articles.map((newsData) => {
         return {
@@ -38,7 +40,7 @@ const NewsBucket = (props) => {
       // console.log(error);
       setLoading(false);
     }
-  }, []);
+  }, [params.categoryId]);
 
   useEffect(() => {
     buttonHandler();

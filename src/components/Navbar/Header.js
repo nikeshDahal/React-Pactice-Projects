@@ -1,9 +1,9 @@
-import React,{useEffect, useState}from "react";
+import React from "react";
 import classes from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import DateContainer from "../Date-Container/DateContainer";
 
-const Header = ({onSetCategory}) => {
+const Header = () => {
   const categories = [
     "business",
     "entertainment",
@@ -46,12 +46,10 @@ const Header = ({onSetCategory}) => {
               <ul>
                 <li>
                   <NavLink
-                    to={`/${text}`}
+                    to={`/category/${text}`}
                     className={({ isActive }) =>
                       isActive ? classes.active : ""
                     }
-                    button
-                    // onClick={()=>onSetCategory(text)}
                   >
                     {text}
                   </NavLink>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import News from '../News/News';
-import classes from './NewsList.module.css';
+import News from "../News/News";
+import classes from "./NewsList.module.css";
 
 const NewsList = (props) => {
   return (
-    <ul className={classes['news-list']}>
+    <ul className={classes["news-list"]}>
       {props.news.map((newsItem) => (
         <News
           key={newsItem.id}
@@ -13,11 +13,10 @@ const NewsList = (props) => {
           publishedAt={newsItem.publishedAt}
           content={newsItem.content}
           description={newsItem.description}
-          image = {newsItem.image}
-          url = {newsItem.url}
-          source = {newsItem.source.name}
-          author = {newsItem.author}
-          // moreDescriptions = {newsItem.newsUrl}
+          image={newsItem.image}
+          url={newsItem.url}
+          source={newsItem.source.name}
+          author={newsItem.author}
         />
       ))}
     </ul>
