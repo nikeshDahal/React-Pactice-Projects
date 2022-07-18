@@ -2,7 +2,8 @@ import React from "react";
 import classes from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import DateContainer from "../Date-Container/DateContainer";
-import logo from '../static/logo-eb-pearls.png'
+import logo from "../static/logo-eb-pearls.png";
+import homeImg from "../static/Home.png";
 
 const Header = () => {
   const categories = [
@@ -16,18 +17,13 @@ const Header = () => {
   ];
 
   return (
-    <div className={classes["Head-wrapper"]}>
+   
       <div className={classes.Top_Headline_Wrapper}>
         <div className={classes.Top_Headline_bar}>
-          <img
-            src={logo}
-            className={classes.logo}
-            alt="EB-pealrs"
-          ></img>
+          <img src={logo} className={classes.logo} alt="EB-pealrs"></img>
           <span className={classes.news_paper_name}>EB POST</span>
           <DateContainer />
         </div>
-      </div>
       <header className={classes.navbar}>
         <nav>
           <ul>
@@ -36,7 +32,7 @@ const Header = () => {
                 to="/Home"
                 className={({ isActive }) => (isActive ? classes.active : "")}
               >
-                Home
+                <img src={homeImg} alt={"Home"}></img>
               </NavLink>
             </li>
           </ul>
@@ -60,7 +56,8 @@ const Header = () => {
           );
         })}
       </header>
-    </div>
+      </div>
+ 
   );
 };
 export default Header;

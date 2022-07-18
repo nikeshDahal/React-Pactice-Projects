@@ -1,3 +1,7 @@
+.mainContentWrapper{
+ /* margin-top: 11.5rem; */
+}
+
 .button_fetch_container{
   /* margin: 1rem auto; */
   text-align: center;
@@ -32,12 +36,6 @@
   background-color:#FFFF00;
   border-color: white
 }
-
-
-
-
-
-
 
 .news{
     margin-top: 1rem ;

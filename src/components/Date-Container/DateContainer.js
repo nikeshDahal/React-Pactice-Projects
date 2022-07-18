@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./DateContainer.module.css";
 import { NavLink } from "react-router-dom";
+import aboutMeLogo  from "../static/aboutMe.png" 
 const DateContainer = () => {
   const d = new Date();
   let ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
@@ -36,7 +37,10 @@ const DateContainer = () => {
           to="/About"
           className={({ isActive }) => (isActive ? classes.active : "")}
         >
-          About Me
+          <div className={classes.aboutMe_wrapper}>
+          <span>About Me</span>
+          <img src={aboutMeLogo} alt="About Me"/>
+          </div>
         </NavLink>
     </div>
   );
