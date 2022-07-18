@@ -1,6 +1,7 @@
 import React from "react";
 
 import classes from "./News.module.css";
+import newsphoto  from '../static/newsPhoto.jpg'
 
 const News = (props) => {
   const fulldate = new Date(props.publishedAt); 
@@ -11,8 +12,8 @@ const News = (props) => {
     <div className={classes.news_card}>
       <div></div>
       <img
-        alt={props.title}
-        src={props.image}
+        alt='newsPhoto'
+        src={props.image?props.image:newsphoto}
         className={classes.newsImage}
       ></img>
       <div className={classes.newsText}>

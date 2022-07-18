@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import DateContainer from "../Date-Container/DateContainer";
+import logo from '../static/logo-eb-pearls.png'
 
 const Header = () => {
   const categories = [
@@ -19,7 +20,7 @@ const Header = () => {
       <div className={classes.Top_Headline_Wrapper}>
         <div className={classes.Top_Headline_bar}>
           <img
-            src="images/logo-eb-pearls.png"
+            src={logo}
             className={classes.logo}
             alt="EB-pealrs"
           ></img>
