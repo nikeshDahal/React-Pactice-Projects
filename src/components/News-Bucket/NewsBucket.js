@@ -4,6 +4,8 @@ import axios from "axios";
 import classes from "./NewsBucket.module.css";
 import { useParams } from "react-router-dom";
 import countries from "../Helper/Data";
+import loadingGif from "../static/lazyLoading.gif"
+import { height, textAlign, width } from "@mui/system";
 
 const NewsBucket = (props) => {
   const [news, setNews] = useState([]);
@@ -49,7 +51,6 @@ const NewsBucket = (props) => {
         setLoading(false);
       } catch (error) {
         setError(error.message);
-        // console.log(error);
         setLoading(false);
       }
     },
@@ -83,7 +84,7 @@ const NewsBucket = (props) => {
           {!loading && news.length > 0 && <NewsList news={news} />}
           {!loading && news.length === 0 && !error && <h3>found no news </h3>}
           {!loading && error && <h3>{error}</h3>}
-          {loading && <h3>loading...</h3>}
+          {loading && <img style={{width:"10rem" ,height:"10rem" }} src={loadingGif} alt="loading..."/>}
         </div>
       </div>
     </React.Fragment>
